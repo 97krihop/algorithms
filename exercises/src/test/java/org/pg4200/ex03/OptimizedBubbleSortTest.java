@@ -5,12 +5,13 @@ import org.junit.jupiter.api.Test;
 import java.util.Comparator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class OptimizedBubbleSortTest {
 
-	private OptimizedBubbleSort sorter = new OptimizedBubbleSort();
+	private final OptimizedBubbleSort sorter = new OptimizedBubbleSort();
 
-	public class StringComparator implements Comparator<String> {
+	public static class StringComparator implements Comparator<String> {
 		@Override
 		public int compare(String s1, String s2) {
 			return s1.compareTo(s2);
@@ -60,7 +61,7 @@ public class OptimizedBubbleSortTest {
 	public void TestString() {
 		String[] arr1 = {"c", "b", "a", "d", "e", "f"};
 		String[] arr2 = {"c", "b", "a", "d", "e", "f"};
-		assertEquals(true, sorter.sort(arr2, new StringComparator(), true) < sorter.sort(arr1, new StringComparator(), false));
+		assertTrue(sorter.sort(arr2, new StringComparator(), true) < sorter.sort(arr1, new StringComparator(), false));
 
 		assertEquals("a", arr1[0]);
 		assertEquals("b", arr1[1]);
