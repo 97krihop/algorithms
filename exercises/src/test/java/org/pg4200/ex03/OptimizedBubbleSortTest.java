@@ -2,6 +2,7 @@ package org.pg4200.ex03;
 
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Array;
 import java.util.Comparator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -76,5 +77,19 @@ public class OptimizedBubbleSortTest {
 		assertEquals("d", arr2[3]);
 		assertEquals("e", arr2[4]);
 		assertEquals("f", arr2[5]);
+	}
+	@Test
+	public void TestGame() {
+
+		GameUser a = new GameUser("kris",22);
+		GameUser b = new GameUser("tommy",12);
+		GameUser c = new GameUser("adam",22);
+		GameUser d = new GameUser("bananas",2);
+
+		GameUser[] arr =  {a,b,c,d};
+
+		assertEquals(6,sorter.sort(arr, new GameUserComparator(), true));
+
+
 	}
 }
