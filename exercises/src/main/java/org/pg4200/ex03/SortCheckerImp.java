@@ -1,10 +1,5 @@
 package org.pg4200.ex03;
 
-import org.pg4200.les03.sort.BubbleSort;
-
-import java.util.Arrays;
-
-
 public class SortCheckerImp implements SortChecker {
 	@Override
 	public <T extends Comparable<T>> boolean isSortedCopy(T[] original, T[] sorted) {
